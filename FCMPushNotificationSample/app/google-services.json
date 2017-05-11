@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "57780201115",
+    "firebase_url": "https://urbanairshipnotificationsample.firebaseio.com",
+    "project_id": "urbanairshipnotificationsample",
+    "storage_bucket": "urbanairshipnotificationsample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57780201115:android:8fd8a049e3b1d2b4",
+        "android_client_info": {
+          "package_name": "com.urbanairshipnotification.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57780201115-pft60o638l5gnh972lc9dtkrrhg9hvua.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUR1HetUVLbcNi3GdfMx1-hWcH2-o3Ab0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

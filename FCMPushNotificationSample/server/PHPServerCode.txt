@@ -1,0 +1,33 @@
+
+    public function send_fcm_notify() {
+	
+		$reg_id = "f1DekH5UZGw:APA91bH-6z_AzSUFNERWMNf8x0TI8O9ETO7TIJp70tmoaRpHOuNe1itK9tXPAB714I7MDpqlG8uII8pL_B4udI8j5tfyWLIok8gHhI5iZZpQ8crq7KmeD_fKBbtzVq296UNAV7NsT_ws";
+		$message ="Message From Bizofit web";
+        
+		define("GOOGLE_API_KEY", "AAAADXP35ps:APA91bHjNMAtb17tu1amIgEcvvzi6588frhXMFjyGiDwkFJ2-tXZlrdGvQ4UkzIjbU0boTE6P2oaCBf6auBamA8Kytr0VISrzOfjH9DYhmjpR6Rc-QIHBCoqzv_bauVqdsqaa_16RGxc");
+        define("GOOGLE_GCM_URL", "https://fcm.googleapis.com/fcm/send");
+        $fields = array(
+            'to'  						=> $reg_id ,
+            'priority'					=> "high",
+            'data'						=> array("title" => "Android Learning", "message" => $message)
+        );
+        $headers = array(
+            GOOGLE_GCM_URL,
+            'Content-Type: application/json',
+            'Authorization: key=' . GOOGLE_API_KEY
+        );
+        echo "<br>";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, GOOGLE_GCM_URL);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
+        $result = curl_exec($ch);
+        if ($result === FALSE) {
+            die('Problem occurred: ' . curl_error($ch));
+        }
+        curl_close($ch);
+        echo $result;
+    }
